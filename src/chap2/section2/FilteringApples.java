@@ -20,13 +20,16 @@ public class FilteringApples {
         System.out.println("greenApples value = " + greenApples);
 
 
-
+        // 익명 클래스를 사용하여 구현
         List<Apple> redApples = filterApples(inventory, new ApplePredicate() {
             @Override
             public boolean test(Apple apple) {
                 return Color.RED.equals(apple.getColor());
             }
         });
+
+        // 람다 표현식으로 구현
+        List<Apple> result = filterApples(inventory, (Apple apple) -> Color.RED.equals(apple.getColor()));
     }
 
     public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate applePredicate) {
