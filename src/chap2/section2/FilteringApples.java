@@ -1,7 +1,7 @@
 package chap2.section2;
 
-import chap2.section1.Apple;
-import chap2.section1.Color;
+import chap2.example.Apple;
+import chap2.example.Color;
 
 import java.util.ArrayList;
 import java.util.Arrays;

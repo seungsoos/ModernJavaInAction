@@ -1,4 +1,4 @@
-package chap2.section1;
+package chap2.example;
 
 public enum Color {
     RED, GREEN

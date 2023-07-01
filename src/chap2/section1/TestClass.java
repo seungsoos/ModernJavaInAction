@@ -1,5 +1,6 @@
 package chap2.section1;
 
+import chap2.example.Apple;
 import chap2.section2.ApplePredicate;
 
 import java.util.ArrayList;

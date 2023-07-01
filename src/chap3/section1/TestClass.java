@@ -1,6 +1,6 @@
 package chap3.section1;
 
-import chap2.section1.Apple;
+import chap2.example.Apple;
 
 import java.util.Comparator;
 

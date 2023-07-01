@@ -1,7 +1,6 @@
 package chap2.example;
 
-import chap2.section1.Apple;
-import chap2.section2.ApplePredicate;
+import chap2.section1.AppleFormatter;
 
 import java.util.List;
 
