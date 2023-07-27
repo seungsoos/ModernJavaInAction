@@ -33,7 +33,7 @@ public class TestClass {
          * 6.2.2 요약 연산
          */
         // 총 칼로리 계산
-        int totalCalories = menu.stream().collect(Collectors.summingInt(Dish::getCalories));
+        int totalCalories1 = menu.stream().collect(Collectors.summingInt(Dish::getCalories));
 
         // 칼로리의 평균값 계산
         Double avgCalories = menu.stream().collect(Collectors.averagingInt(Dish::getCalories));
@@ -73,6 +73,9 @@ public class TestClass {
         Integer reducing3 = menu.stream().collect(Collectors.reducing(0,    // 초깃값
                                                                         Dish::getCalories, // 변환함수
                                                                         Integer::sum)); // 합계 함수
+
+        // 한개의 인수를 갖는 reduce
+        int totalCalories2 = menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
 
     }
 }
