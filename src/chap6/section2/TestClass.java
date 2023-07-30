@@ -1,6 +1,7 @@
 package chap6.section2;
 
 import chap4.Type;
+import chap6.CaloricLevel;
 import chap6.Dish;
 
 import java.util.*;
@@ -76,6 +77,27 @@ public class TestClass {
 
         // 한개의 인수를 갖는 reduce
         int totalCalories2 = menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
+
+        /**
+         * 6.3 그룹화
+         */
+        Map<Type, List<Dish>> dishesByType = menu.stream().collect(Collectors.groupingBy(Dish::getType));
+        System.out.println(dishesByType);
+
+        menu.stream().collect(Collectors.groupingBy(dish ->{
+            if(dish.getCalories() <= 400) return CaloricLevel.DIET;
+            else if (dish.getCalories() <= 700) return CaloricLevel.NORMAL;
+            else return CaloricLevel.FAT;
+        }));
+
+        /**
+         * 6.3.1 그룹화된 요소 조작
+         */
+        // 500 칼로리 이상 필터 후 그룹핑
+        Map<Integer, List<Dish>> collect1 = menu.stream().filter(dish -> dish.getCalories() >= 500)
+                .collect(Collectors.groupingBy(Dish::getCalories));
+
+
 
     }
 }
