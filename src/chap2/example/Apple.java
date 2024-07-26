@@ -1,15 +1,15 @@
 package chap2.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
-@Data
-@AllArgsConstructor
 public class Apple  extends Fruit{
 
     private int weight;
     private Color color;
 
+    public Apple(int weight, Color color) {
+        this.weight = weight;
+        this.color = color;
+    }
 
     public Apple() {
 
@@ -20,5 +20,13 @@ public class Apple  extends Fruit{
     }
 
     public Apple(Color color, Integer integer) {
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public Color getColor() {
+        return color;
     }
 }
